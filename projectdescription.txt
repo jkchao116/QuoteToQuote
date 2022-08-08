@@ -1,0 +1,18 @@
+This project will be a place for adding, liking quotes from all walks of life.
+
+Tech Stack: Python
+
+Feature List:
+MVP
+    - All crud functions
+    - Data validations for create and edit options
+    - Login Registration with validations
+    - Protected Routes
+    
+Product Backlog
+    - CCS Framework
+    - Deployed publicly
+    - Uses Third Party API
+    - File Upload
+    - many to many relationship (like, favorite)
+
