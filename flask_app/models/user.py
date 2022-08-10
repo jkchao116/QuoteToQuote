@@ -1,6 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 import re	# the regex module
-from flask_app.models import sighting
+from flask_app.models import quote
 # create a regular expression object that we'll use later   
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 from flask import flash
