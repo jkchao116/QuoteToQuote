@@ -4,7 +4,7 @@ from flask_app.models.sighting import Sighting
 from flask_app.models.user import User
 
 #Route that will show the report form
-@app.route('/new/sighting')
+@app.route('/new/quote')
 def create_quote():
     if 'user_id' not in session:
             return redirect('/logout')
@@ -70,7 +70,7 @@ def add_quote_db():
     Quote.save(data)
     return redirect('/dashboard')
 
-#Route that will edit a sighting in the database (POST)
+#Route that will edit a quote in the database (POST)
 @app.route('/update/quote/<int:id>', methods=['POST'])
 def update_quote(id):
     if 'user_id' not in session:

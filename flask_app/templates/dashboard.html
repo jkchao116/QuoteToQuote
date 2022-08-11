@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/foundation.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x align-spaced">
+            <div class="cell large-12 medium-6 large-8">
+                <h1>Quotes</h1>
+            </div>
+            <div class="cell large-12 medium-6 large-4">
+                <h2>{{user.firstName}} {{user.lastName}}</h2>
+                <a href="/new/quote"><button class="button">Add a Quote</button></a>
+                <a href="/logout"><button class="button">Logout</button></a>
+            </div>
+        <div class="grid-x grid-margin-x">
+            <div class="cell small-12 medium-12 large-12">
+                <h3>Quotes From All Walks of Life</h3>
+                <table>
+                        {% for this_quote in all_quotes %}
+                            <tr>
+                                <td>{{this_quote.title}}</td>
+                            </tr>
+                            <tr>
+                                <td><p>Shared By: {{this_quote.user.firstName}}</p></td>
+                                <td>
+                                    <a href="/show/{{this_quote.id}}">View</a> | 
+                                    {% if user.id == this_quote.user_id %}
+                                    <a href="/edit/{{this_quote.id}}">Edit</a> |
+                                    <a href="/delete/{{this_quote.id}}">Delete</a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                </table>
+            </div>
+        </div>
+        </div>
+        <div class="grid-x grid-padding-x">
+
+        </div>
+    </div>
+</body>
+</html>
