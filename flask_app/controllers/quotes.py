@@ -1,9 +1,9 @@
 from flask import render_template, redirect, request, session, flash
 from flask_app import app
-from flask_app.models.sighting import Sighting
+from flask_app.models.quote import Quote
 from flask_app.models.user import User
 
-#Route that will show the report form
+#Route that will show the quote form
 @app.route('/new/quote')
 def create_quote():
     if 'user_id' not in session:
