@@ -37,7 +37,7 @@ class Quote:
                 "updatedAt": each_quote['updatedAt']
             }
             author = user.User(one_quote_author_info)
-            this_qupte_instance.user = author
+            this_quote_instance.user = author
             all_quotes.append(this_quote_instance)
         return all_quotes
     
@@ -79,7 +79,7 @@ class Quote:
         return connectToMySQL(cls.db).query_db(query,data)
     
     @staticmethod
-    def validate_quote(sighting):
+    def validate_quote(quote):
         is_valid = True
         if len(quote['title']) < 3:
             is_valid = False

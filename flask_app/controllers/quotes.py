@@ -4,7 +4,7 @@ from flask_app.models.quote import Quote
 from flask_app.models.user import User
 
 #Route that will show the quote form
-@app.route('/new/quote')
+@app.route('/new/quotes')
 def create_quote():
     if 'user_id' not in session:
             return redirect('/logout')
@@ -12,7 +12,7 @@ def create_quote():
         'id': session['user_id']
     }
     
-    return render_template("new_quote.html", user = User.get_by_id(data))
+    return render_template("newquote.html", user = User.get_by_id(data))
 
 #Route that will show the edit form
 @app.route('/edit/<int:id>')
@@ -51,7 +51,7 @@ def delete_quote(id):
     Quote.destroy(data)
     return redirect("/dashboard")
 
-#Route that will add a sighting to the database (POST)
+#Route that will add a quote to the database (POST)
 @app.route('/add/quote/db', methods=['POST'])
 def add_quote_db():
     if 'user_id' not in session:
