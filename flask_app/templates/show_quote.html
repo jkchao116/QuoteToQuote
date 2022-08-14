@@ -9,24 +9,32 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/app.css') }}">
 </head>
 <body>
-    <div class="grid-container">
-        <div class="grid-x grid-margin-x align-spaced">
-            <div class="cell medium-6 large-8">
-                <h1></h1>
-            </div>
-            <div class="cell small-12 medium-12 large-8">
-                <h2>{{user.firstName}} {{user.lastName}}</h2>
-                <a href="/dashboard"><button class="button">Dashboard</button></a>
-                <a href="/logout"><button class="button">Logout</button></a>
-            </div>
-        <div class="grid-x grid-margin-x align-spaced">
-            <div class="cell small-12 medium-12 large-12">
-                <h1>{{this_quote.title}}</h1>
-                <p>{{this_quote.quote}}</p>
-                <p>Added by: {{this_quote.user.firstName}} {{this_quote.user.lastName}}</p>
+    <div class="outer">
+        <div class="grid-container">
+            <div class="grid-x grid-margin-x align-spaced">
+                <div class="cell align">
+                    <h2>{{user.firstName}} {{user.lastName}}</h2>
+                    <a href="/dashboard"><button class="button">Dashboard</button></a>
+                    <a href="/logout"><button class="button">Logout</button></a>
+                </div>
             </div>
         </div>
-        </div>
+        <div class="grid-container">
+            <div class="grid-x grid-margin-x align-spaced">
+                <div><h1>Viewing {{this_quote.user.firstName}}'s Quote {{this_quote.title}}</h1></div>
+                <div class="cell">
+
+                </div>
+                <div class="grid-x grid-margin-x align-spaced">
+                    <div class="large-12 medium-8 small-6 cell">
+                        <p>
+                        {{this_quote.quote}}
+                        Added by: {{this_quote.user.firstName}} {{this_quote.user.lastName}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+    `</div>
     </div>
 </body>
 </html>
