@@ -9,17 +9,23 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/app.css') }}">
 </head>
 <body>
-    <div class="grid-container">
-        <div class="grid-x grid-margin-x align-spaced">
-            <div class="cell medium-6 large-8">
-                <h1>{{user.firstName}} Quotes</h1>
-            </div>
-            <div class="cell medium-6 large-4">
-                <h2>{{user.firstName}} {{user.lastName}}</h2>
-                <a href="/dashboard"><button class="button">Dashboard</button></a>
-                <a href="/logout"><button class="button">Logout</button></a>
-            </div>
+    <div class="top-bar">
+        <div><h3>{{user.firstName}} {{user.lastName}}</h3></div>
+        <div class="top-bar-middle">
+
+          <ul class="menu">
+            <li><a href="/dashboard"><button class="button">Dashboard</button></a></li>
+            <li><a href="/logout"><button class="button">Logout</button></a></li>
+          </ul>
         </div>
+      </div>
+    <div class="callout large primary">
+        <div class="row column text-center" id="dashheader">
+          <h1>Add a Quote!</h1>
+          <h2 class="subheader">If its good for you its good for us too!</h2>
+        </div>
+      </div>
+    <div class="grid-container">
     </div>
     <div class="grid-container">
         <h2>Add a quote</h2>
@@ -34,12 +40,13 @@
                 {% endif %}
             {% endwith %}
                 <div class="large-8 cell">
-                    <label for="title">Title</label>
-                    <input type="text" name="title" placeholder="Title" />
+
                 </div>
                 </div>
                 <div class="grid-x grid-padding-x">
                 <div class="large-12 medium-4 cell">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" placeholder="Title" />
                     <label for="quote">Quote</label>
                     <input type="text" name="quote" placeholder="Please add Quote" />
                 </div>

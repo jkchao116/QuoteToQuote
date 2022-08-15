@@ -2344,8 +2344,9 @@ kbd {
   margin-top: 0.2rem;
   margin-bottom: 0.5rem;
   font-weight: normal;
+  font-family: 'Courier New', Courier, monospace;
   line-height: 1.4;
-  color: #8a8a8a; }
+  color: #fcf9f9; }
 
 .lead {
   font-size: 125%;
@@ -3400,7 +3401,8 @@ select {
   .callout > :last-child {
     margin-bottom: 0; }
   .callout.primary {
-    background-color: #d7ecfa;
+    background-color: 
+    #344151;
     color: #0a0a0a; }
   .callout.secondary {
     background-color: #eaeaea;

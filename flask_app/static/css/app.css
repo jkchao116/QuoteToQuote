@@ -1,3 +1,26 @@
 body{
-    background:url(../images/roughmountains.jpg);
+    background:url(../images/roughmountains.jpg)
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#dashheader h1 {
+    color: orange;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.blog-post h3 {
+    color: orange;
+}
+
+.blog-post small {
+    color: black;
+}
+
+.menu simple li{
+    overflow: scroll;
+    white-space: nowrap;
 }

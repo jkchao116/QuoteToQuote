@@ -9,32 +9,24 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/app.css') }}">
 </head>
 <body>
-    <div class="outer">
-        <div class="grid-container">
-            <div class="grid-x grid-margin-x align-spaced">
-                <div class="cell align">
-                    <h2>{{user.firstName}} {{user.lastName}}</h2>
-                    <a href="/dashboard"><button class="button">Dashboard</button></a>
-                    <a href="/logout"><button class="button">Logout</button></a>
-                </div>
-            </div>
-        </div>
-        <div class="grid-container">
-            <div class="grid-x grid-margin-x align-spaced">
-                <div><h1>Viewing {{this_quote.user.firstName}}'s Quote {{this_quote.title}}</h1></div>
-                <div class="cell">
 
-                </div>
-                <div class="grid-x grid-margin-x align-spaced">
-                    <div class="large-12 medium-8 small-6 cell">
-                        <p>
-                        {{this_quote.quote}}
-                        Added by: {{this_quote.user.firstName}} {{this_quote.user.lastName}}
-                        </p>
-                    </div>
-                </div>
+    <div class="top-bar">
+        <div><h3>{{user.firstName}} {{user.lastName}}</h3></div>
+        <div class="top-bar-middle">
+
+          <ul class="menu">
+            <li><a href="/dashboard"><button class="button">Dashboard</button></a></li>
+            <li><a href="/logout"><button class="button">Logout</button></a></li>
+          </ul>
+        </div>
+      </div>
+    <div class="outer">
+        <div class="callout large primary">
+            <div class="row column text-center" id="dashheader">
+              <h1>Viewing {{this_quote.title}}</h1>
+              <h2 class="subheader">{{this_quote.quote}}</h2>
             </div>
-    `</div>
+          </div>
     </div>
 </body>
 </html>
