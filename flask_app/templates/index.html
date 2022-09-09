@@ -1,12 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hello World</h1>
-</body>
+
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Main Page</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/foundation.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/app.css') }}">
+    </head>
+    <body>
+        <div class="callout large primary">
+            <div class="row column text-center" id="dashheader">
+              <h1>Quotes to Quote</h1>
+              <!-- <h2 class="subheader">If its good for you its good for us too!</h2> -->
+            </div>
+          </div>
+        <div class="grid-container">
+            <div class="grid-x grid-margin-x">
+                <div class="medium-8 large-4 cell">
+                    <form action="/register" method="post">
+                            <div class="warning">
+                                {% with messages = get_flashed_messages(category_filter=['register']) %}     <!-- declare a variable called messages -->
+                                    {% if messages %}                            <!-- check if there are any messages -->
+                                        <h2>Uh Oh!</h2>
+                                            {% for message in messages %}            <!-- loop through the messages -->
+                                                <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                                            {% endfor %}
+                                    {% endif %}
+                                {% endwith %}
+                            </div>
+                                <h1>Register</h1>
+                                <label for="firstName">First Name:</label>
+                                <input type="text" name="firstName" placeholder="First Name">
+                                <label for="lastName">Last Name:</label>
+                                <input type="text" name="lastName" placeholder="Last Name">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" placeholder="Your Email" />
+                                <label for="password">Password:</label>
+                                <input type="password" name="password" placeholder="password">
+                                <label for="confirm_password">Confirm Password</label>
+                                <input type="password" name="confirm_password" placeholder="confirm password">
+                                <button class="button" type="submit" value="Register">Register</button>
+                    </form>
+                </div>
+                <div class="medium-8 large-6 cell">
+                    <form action="/login" method="post">
+                        <div class="warning">
+                            {% with messages = get_flashed_messages(category_filter=['login']) %}     <!-- declare a variable called messages -->
+                            {% if messages %}                            <!-- check if there are any messages -->
+                                <h2>Uh Oh!</h2>
+                                    {% for message in messages %}            <!-- loop through the messages -->
+                                        <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                        </div>
+
+                                <h1>Login</h1>
+                                <label for="email">Email</label>
+                                <input type="text" name="email" placeholder="Your Email" />
+                                <label for="password">Password:</label>
+                                <input type="password" name="password" placeholder="password">
+                                <button class="button" type="submit" value="Login">Login</button>
+                            </div> 
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
